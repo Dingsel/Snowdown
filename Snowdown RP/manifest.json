@@ -1,0 +1,20 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": ["Dingsel"]
+	},
+	"header": {
+		"name": "pack.name",
+		"description": "pack.description",
+		"min_engine_version": [1, 19, 50],
+		"uuid": "029cd235-56e6-4696-a748-226bec79fd11",
+		"version": [1, 0, 6]
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "cd7ad1ed-d64b-43df-81b0-689711372c6e",
+			"version": [1, 0, 0]
+		}
+	]
+}

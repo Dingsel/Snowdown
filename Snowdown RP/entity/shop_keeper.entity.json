@@ -1,0 +1,24 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dest:shop_keeper",
+			"materials": {
+				"default": "villager_v2"
+			},
+			"textures": {
+				"default": "textures/entity/shop_keeper/base"
+			},
+			"geometry": {
+				"default": "geometry.shop_keeper"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"base_color": "#ffffff",
+				"overlay_color": "#4500ff"
+			}
+		}
+	}
+}

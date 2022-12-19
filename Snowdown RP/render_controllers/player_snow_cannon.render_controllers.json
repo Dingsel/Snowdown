@@ -1,0 +1,29 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.snow_cannon": {
+			"arrays": {
+				"geometries": {
+					"Array.states": [
+						"Geometry.default",
+						"Geometry.snow"
+					]
+				}
+			},
+			"materials": [
+				{
+					"*": "Material.default"
+				}
+			],
+			"textures": [
+				"Texture.default"
+			],
+			"geometry": "Array.states[query.is_item_name_any('slot.weapon.mainhand', 0, 'dest:snow_cannon')]",
+			"part_visibility": [
+				{
+					"*": false
+				}
+			]
+		}
+	}
+}

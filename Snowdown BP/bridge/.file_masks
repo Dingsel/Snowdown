@@ -1,0 +1,28 @@
+{
+	"RP/entity/big_snowball.json": {
+		"data": {}
+	},
+	"BP/entities/player.json": {
+		"data": {}
+	},
+	"BP/entities/big_snowball.json": {
+		"data": {}
+	},
+	"BP/animation_controllers/bridge/custom_item_behavior.json": {
+		"data": {
+			"a7dca415_db5c_426c_83f3_e70efa477cc4": {
+				"format_version": "1.10.0",
+				"animation_controllers": {
+					"controller.animation.bridge_custom_item_behavior": {
+						"states": {
+							"default": {}
+						}
+					}
+				}
+			}
+		}
+	},
+	"BP/items/big_snowball.json": {
+		"data": {}
+	}
+}

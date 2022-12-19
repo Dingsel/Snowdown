@@ -1,0 +1,12 @@
+pack.name=Snowdown RP
+pack.description=PVE Gamemode for the Bridge JAM
+item.dest:big_snowball=Big snowball
+
+entity.dest:big_snowball_projectile.name=Big snowball
+tile.dest:construction_block.name=Construction Block
+entity.dest:moving_snow.name=Moving snow
+item.spawn_egg.entity.dest:moving_snow.name=Spawn Moving snow
+entity.dest:mawler.name=Mawler
+item.spawn_egg.entity.dest:mawler.name=Spawn Mawler
+entity.dest:shop_keeper.name=Shopkeeper
+item.spawn_egg.entity.dest:shop_keeper.name=Spawn Shopkeeper

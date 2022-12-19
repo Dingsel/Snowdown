@@ -1,0 +1,345 @@
+{
+	"file_path": "C:\\Users\\Luka\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_behavior_packs\\Snowdown BP\\entities\\big_snowball.json",
+	"file_type": "entity",
+	"format_version": 1,
+	"file_uuid": "2f54916f_f4eb_489e_9621_ce2951a3e7da",
+	"file_version": 1,
+	"cache_content": {
+		"children": [
+			{
+				"open": {
+					"format_version": "1.19.50",
+					"minecraft:entity": {
+						"description": {
+							"identifier": "dest:big_snowball_projectile",
+							"is_spawnable": false,
+							"is_summonable": true,
+							"is_experimental": false,
+							"runtime_identifier": "minecraft:snowball"
+						},
+						"components": {
+							"minecraft:collision_box": {
+								"width": 0.25,
+								"height": 0.25
+							},
+							"minecraft:projectile": {
+								"on_hit": {
+									"impact_damage": {
+										"damage": 10,
+										"knockback": true
+									},
+									"remove_on_hit": {},
+									"particle_on_hit": {
+										"particle_type": "snowballpoof",
+										"num_particles": 6,
+										"on_entity_hit": true,
+										"on_other_hit": true
+									}
+								},
+								"anchor": 1,
+								"power": 1.5,
+								"gravity": 0.03,
+								"angle_offset": 0,
+								"offset": [
+									0,
+									-0.1,
+									0
+								]
+							},
+							"minecraft:physics": {},
+							"minecraft:pushable": {
+								"is_pushable": true,
+								"is_pushable_by_piston": true
+							}
+						}
+					}
+				},
+				"data": "1.19.50",
+				"key": "format_version"
+			},
+			{
+				"open": {
+					"format_version": "1.19.50",
+					"minecraft:entity": {
+						"description": {
+							"identifier": "dest:big_snowball_projectile",
+							"is_spawnable": false,
+							"is_summonable": true,
+							"is_experimental": false,
+							"runtime_identifier": "minecraft:snowball"
+						},
+						"components": {
+							"minecraft:collision_box": {
+								"width": 0.25,
+								"height": 0.25
+							},
+							"minecraft:projectile": {
+								"on_hit": {
+									"impact_damage": {
+										"damage": 10,
+										"knockback": true
+									},
+									"remove_on_hit": {},
+									"particle_on_hit": {
+										"particle_type": "snowballpoof",
+										"num_particles": 6,
+										"on_entity_hit": true,
+										"on_other_hit": true
+									}
+								},
+								"anchor": 1,
+								"power": 1.5,
+								"gravity": 0.03,
+								"angle_offset": 0,
+								"offset": [
+									0,
+									-0.1,
+									0
+								]
+							},
+							"minecraft:physics": {},
+							"minecraft:pushable": {
+								"is_pushable": true,
+								"is_pushable_by_piston": true
+							}
+						}
+					}
+				},
+				"key": "minecraft:entity",
+				"children": [
+					{
+						"open": {
+							"description": {
+								"identifier": "dest:big_snowball_projectile",
+								"is_spawnable": false,
+								"is_summonable": true,
+								"is_experimental": false,
+								"runtime_identifier": "minecraft:snowball"
+							},
+							"components": {
+								"minecraft:collision_box": {
+									"width": 0.25,
+									"height": 0.25
+								},
+								"minecraft:projectile": {
+									"on_hit": {
+										"impact_damage": {
+											"damage": 10,
+											"knockback": true
+										},
+										"remove_on_hit": {},
+										"particle_on_hit": {
+											"particle_type": "snowballpoof",
+											"num_particles": 6,
+											"on_entity_hit": true,
+											"on_other_hit": true
+										}
+									},
+									"anchor": 1,
+									"power": 1.5,
+									"gravity": 0.03,
+									"angle_offset": 0,
+									"offset": [
+										0,
+										-0.1,
+										0
+									]
+								},
+								"minecraft:physics": {},
+								"minecraft:pushable": {
+									"is_pushable": true,
+									"is_pushable_by_piston": true
+								}
+							}
+						},
+						"key": "description",
+						"is_minified": true,
+						"children": {
+							"identifier": "dest:big_snowball_projectile",
+							"is_spawnable": false,
+							"is_summonable": true,
+							"is_experimental": false,
+							"runtime_identifier": "minecraft:snowball"
+						}
+					},
+					{
+						"open": {
+							"description": {
+								"identifier": "dest:big_snowball_projectile",
+								"is_spawnable": false,
+								"is_summonable": true,
+								"is_experimental": false,
+								"runtime_identifier": "minecraft:snowball"
+							},
+							"components": {
+								"minecraft:collision_box": {
+									"width": 0.25,
+									"height": 0.25
+								},
+								"minecraft:projectile": {
+									"on_hit": {
+										"impact_damage": {
+											"damage": 10,
+											"knockback": true
+										},
+										"remove_on_hit": {},
+										"particle_on_hit": {
+											"particle_type": "snowballpoof",
+											"num_particles": 6,
+											"on_entity_hit": true,
+											"on_other_hit": true
+										}
+									},
+									"anchor": 1,
+									"power": 1.5,
+									"gravity": 0.03,
+									"angle_offset": 0,
+									"offset": [
+										0,
+										-0.1,
+										0
+									]
+								},
+								"minecraft:physics": {},
+								"minecraft:pushable": {
+									"is_pushable": true,
+									"is_pushable_by_piston": true
+								}
+							}
+						},
+						"key": "components",
+						"children": [
+							{
+								"key": "minecraft:collision_box",
+								"is_minified": true,
+								"children": {
+									"width": 0.25,
+									"height": 0.25
+								}
+							},
+							{
+								"open": {
+									"minecraft:collision_box": {
+										"width": 0.25,
+										"height": 0.25
+									},
+									"minecraft:projectile": {
+										"on_hit": {
+											"impact_damage": {
+												"damage": 10,
+												"knockback": true
+											},
+											"remove_on_hit": {},
+											"particle_on_hit": {
+												"particle_type": "snowballpoof",
+												"num_particles": 6,
+												"on_entity_hit": true,
+												"on_other_hit": true
+											}
+										},
+										"anchor": 1,
+										"power": 1.5,
+										"gravity": 0.03,
+										"angle_offset": 0,
+										"offset": [
+											0,
+											-0.1,
+											0
+										]
+									},
+									"minecraft:physics": {},
+									"minecraft:pushable": {
+										"is_pushable": true,
+										"is_pushable_by_piston": true
+									}
+								},
+								"key": "minecraft:projectile",
+								"children": [
+									{
+										"open": {
+											"on_hit": {
+												"impact_damage": {
+													"damage": 10,
+													"knockback": true
+												},
+												"remove_on_hit": {},
+												"particle_on_hit": {
+													"particle_type": "snowballpoof",
+													"num_particles": 6,
+													"on_entity_hit": true,
+													"on_other_hit": true
+												}
+											},
+											"anchor": 1,
+											"power": 1.5,
+											"gravity": 0.03,
+											"angle_offset": 0,
+											"offset": [
+												0,
+												-0.1,
+												0
+											]
+										},
+										"key": "on_hit",
+										"is_minified": true,
+										"children": {
+											"impact_damage": {
+												"damage": 10,
+												"knockback": true
+											},
+											"remove_on_hit": {},
+											"particle_on_hit": {
+												"particle_type": "snowballpoof",
+												"num_particles": 6,
+												"on_entity_hit": true,
+												"on_other_hit": true
+											}
+										}
+									},
+									{
+										"data": "1",
+										"key": "anchor"
+									},
+									{
+										"data": "1.5",
+										"key": "power"
+									},
+									{
+										"data": "0.03",
+										"key": "gravity"
+									},
+									{
+										"data": "0",
+										"key": "angle_offset"
+									},
+									{
+										"key": "offset",
+										"is_minified": true,
+										"children": [
+											0,
+											-0.1,
+											0
+										]
+									}
+								]
+							},
+							{
+								"key": "minecraft:physics",
+								"is_minified": true,
+								"children": {}
+							},
+							{
+								"key": "minecraft:pushable",
+								"is_minified": true,
+								"children": {
+									"is_pushable": true,
+									"is_pushable_by_piston": true
+								}
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

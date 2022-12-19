@@ -1,0 +1,11 @@
+{
+	"resource_pack_name": "Snowdown",
+	"texture_name": "atlas.items",
+	"texture_data": {
+		"dest_big_snowball": {
+			"textures": [
+				"textures/items/big_snowball"
+			]
+		}
+	}
+}

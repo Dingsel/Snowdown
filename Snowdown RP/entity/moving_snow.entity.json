@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dest:moving_snow",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/moving_snow"
+			},
+			"geometry": {
+				"default": "geometry.moving_snow"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#a40a38",
+				"overlay_color": "#df83e4"
+			}
+		}
+	}
+}

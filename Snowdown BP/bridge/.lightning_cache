@@ -1,0 +1,65 @@
+{
+	"client_entity": {
+		"RP/entity/big_snowball.json": {
+			"identifiers": [
+				"dest:big_snowball_projectile"
+			],
+			"particle_references": [],
+			"animation_references": [
+				"flying"
+			],
+			"sound_references": [],
+			"texture_references": [
+				"default"
+			],
+			"material_references": [
+				"default"
+			],
+			"geometry_references": [
+				"default"
+			],
+			"geometry_identifiers": [
+				"default"
+			]
+		}
+	},
+	"entity": {
+		"BP/entities/big_snowball.json": {
+			"events": [],
+			"bridge_core_tags": [],
+			"identifiers": [
+				"dest:big_snowball_projectile"
+			],
+			"animation_references": [],
+			"families": [],
+			"custom_commands": [],
+			"custom_components": []
+		},
+		"BP/entities/player.json": {
+			"events": [
+				"minecraft:gain_bad_omen",
+				"minecraft:clear_add_bad_omen",
+				"minecraft:trigger_raid",
+				"minecraft:remove_raid_trigger"
+			],
+			"bridge_core_tags": [],
+			"identifiers": [
+				"minecraft:player"
+			],
+			"animation_references": [],
+			"families": [
+				"player"
+			],
+			"custom_commands": [],
+			"custom_components": []
+		}
+	},
+	"item": {
+		"BP/items/big_snowball.json": {
+			"identifiers": [
+				"dest:big_snowball"
+			],
+			"custom_commands": []
+		}
+	}
+}

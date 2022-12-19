@@ -1,0 +1,28 @@
+{
+	"format_version": "1.19.40",
+	"minecraft:block": {
+		"description": {
+			"identifier": "dest:construction_block",
+			"menu_category": {
+				"category": "construction"
+			}
+		},
+		"components": {
+			"tag:construction": {},
+			"minecraft:collision_box": true,
+			"minecraft:destructible_by_mining": false,
+			"minecraft:destructible_by_explosion": false,
+			"minecraft:geometry": "geometry.construction_block",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "construction_block",
+					"render_method": "opaque"
+				}
+			},
+			"minecraft:light_emission": 15,
+			"minecraft:light_dampening": 0,
+			"minecraft:map_color": "#edf9ff",
+			"minecraft:unit_cube": {}
+		}
+	}
+}
