@@ -17,7 +17,7 @@ export function launchProjectile(x0, y0, z0, g, x1, y1, z1) {
     const zVelocity = zDistance / time;
 
     // Return the velocity as a Vector3 object
-    console.warn(xVelocity, yVelocity, zVelocity)
+    //console.warn(xVelocity, yVelocity, zVelocity)
     return new Vector(xVelocity, yVelocity, zVelocity);
 }
 

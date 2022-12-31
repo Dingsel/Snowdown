@@ -54,7 +54,6 @@ function playerCooldown(player) {
 }
 
 world.events.beforeItemUseOn.subscribe(async ({ blockLocation, source: player }) => {
-
     if (player.cooldown > 0 || world.getDynamicProperty("roundActive") || (world.getDynamicProperty("aquired") ?? false)) return
     await playerCooldown(player)
 
