@@ -1,0 +1,27 @@
+{
+    "format_version": "1.19.0",
+    "animation_controllers": {
+        "controller.animation.snow_golem.move": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "jump": "q.is_moving"
+                        }
+                    ]
+                },
+                "jump": {
+                    "blend_transition": 0.3,
+                    "animations": [
+                        "jump"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.all_animations_finished && !q.is_moving"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

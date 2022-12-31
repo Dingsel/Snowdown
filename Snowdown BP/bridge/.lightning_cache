@@ -1,47 +1,22 @@
 {
-	"client_entity": {
-		"RP/entity/big_snowball.json": {
-			"identifiers": [
-				"dest:big_snowball_projectile"
-			],
-			"particle_references": [],
-			"animation_references": [
-				"flying"
-			],
-			"sound_references": [],
+	"attachable": {
+		"RP/attachables/snow_suit_boots.json": {
 			"texture_references": [
-				"default"
+				"default",
+				"enchanted"
 			],
 			"material_references": [
-				"default"
+				"default",
+				"enchanted"
 			],
 			"geometry_references": [
-				"default"
-			],
-			"geometry_identifiers": [
 				"default"
 			]
 		}
 	},
 	"entity": {
-		"BP/entities/big_snowball.json": {
-			"events": [],
-			"bridge_core_tags": [],
-			"identifiers": [
-				"dest:big_snowball_projectile"
-			],
-			"animation_references": [],
-			"families": [],
-			"custom_commands": [],
-			"custom_components": []
-		},
 		"BP/entities/player.json": {
-			"events": [
-				"minecraft:gain_bad_omen",
-				"minecraft:clear_add_bad_omen",
-				"minecraft:trigger_raid",
-				"minecraft:remove_raid_trigger"
-			],
+			"events": [],
 			"bridge_core_tags": [],
 			"identifiers": [
 				"minecraft:player"
@@ -55,9 +30,27 @@
 		}
 	},
 	"item": {
-		"BP/items/big_snowball.json": {
+		"BP/items/snow_suit_boots.json": {
 			"identifiers": [
-				"dest:big_snowball"
+				"dest:snow_suit_boots"
+			],
+			"custom_commands": []
+		},
+		"BP/items/snow_suit_leggings.json": {
+			"identifiers": [
+				"dest:snow_suit_leggings"
+			],
+			"custom_commands": []
+		},
+		"BP/items/snow_suit_chestplate.json": {
+			"identifiers": [
+				"dest:snow_suit_chestplate"
+			],
+			"custom_commands": []
+		},
+		"BP/items/snow_suit_helmet.json": {
+			"identifiers": [
+				"dest:snow_suit_helmet"
 			],
 			"custom_commands": []
 		}

@@ -1,0 +1,39 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "dest:hot_chocolate",
+			"category": "nature"
+		},
+		"components": { 
+			"minecraft:max_stack_size": 1,
+			"minecraft:use_duration": 1.6,
+			"minecraft:potion": {
+				"type": "regular"
+			},
+			"minecraft:use_animation": "drink",
+			"minecraft:food": {
+				"nutrition": 4,
+				"can_always_eat": true,
+				"on_consume": {
+					"event": "add_effects"
+				}
+			},
+			"minecraft:icon": {
+				"texture": "dest_hot_chocolate"
+			},
+			"minecraft:render_offsets": "apple"
+		},
+		"events": {
+			"add_effects": {
+				"run_command": {
+					"command": [
+						"effect @s speed 30 1 true",
+						"effect @s resistance 30 1 true",
+						"effect @s strength 30 0 true" 
+					]
+				}
+			}
+		}
+	}
+}

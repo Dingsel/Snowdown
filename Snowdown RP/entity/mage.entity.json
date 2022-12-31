@@ -1,0 +1,44 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dest:mage",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "zombie"
+			},
+			"textures": {
+				"default": "textures/entity/mage"
+			},
+			"geometry": {
+				"default": "geometry.mage"
+			},
+			"spawn_egg": {
+				"base_color": "#ffffff",
+				"overlay_color": "#cb33ff"
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
+				],
+				"animate": [
+					"moving",
+					"base"
+				]
+			},
+			"animations": {
+				"idle": "animation.mage.idle",
+				"damage": "animation.mage.damage",
+				"heal": "animation.mage.heal",
+				"move": "animation.humanoid.move",
+
+				"base": "controller.animation.mage",
+				"moving": "controller.animation.humanoid.move"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"enable_attachables": true
+		}
+	}
+}

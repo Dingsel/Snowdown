@@ -1,0 +1,34 @@
+{
+	"file_path": "C:\\Users\\Luka\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_resource_packs\\Snowdown RP\\attachables\\snow_suit_leggings.player.json",
+	"file_type": "attachable",
+	"format_version": 0,
+	"cache_content": {
+		"format_version": "1.10.0",
+		"minecraft:attachable": {
+			"description": {
+				"identifier": "dest:snow_suit_leggings.player",
+				"item": {
+					"dest:snow_suit_leggings": "query.owner_identifier == 'minecraft:player'"
+				},
+				"materials": {
+					"default": "armor",
+					"enchanted": "armor_enchanted"
+				},
+				"textures": {
+					"default": "textures/models/armor/snow_suit_2",
+					"enchanted": "textures/misc/enchanted_item_glint"
+				},
+				"geometry": {
+					"default": "geometry.player.armor.leggings"
+				},
+				"scripts": {
+					"parent_setup": "variable.leg_layer_visible = 0.0;"
+				},
+				"render_controllers": [
+					"controller.render.armor"
+				]
+			}
+		}
+	},
+	"file_uuid": "da6feb67_fa43_4fa2_a91f_610ed116d925"
+}

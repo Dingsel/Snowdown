@@ -1,0 +1,1 @@
+export const start_round = ["Watch out new Mobs incoming!!", "Looks like a new wave..", "Hopefully we wont die.", "They will never beat us!", "They wont stand a chance!"]

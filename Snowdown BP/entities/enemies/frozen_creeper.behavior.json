@@ -1,0 +1,237 @@
+{
+	"format_version": "1.19.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "dest:frozen_creeper",
+			"runtime_identifier": "minecraft:creeper",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"minecraft:exploding": {
+				"minecraft:explode": {
+					"breaks_blocks": false,
+					"fuse_length": 1.5,
+					"fuse_lit": true,
+					"power": 3,
+					"causes_fire": false,
+					"destroy_affected_by_griefing": true
+				}
+			},
+			"minecraft:charged_frozen_creeper": {
+				"minecraft:is_charged": {}
+			},
+			"minecraft:charged_exploding": {
+				"minecraft:explode": {
+					"fuse_length": 1.5,
+					"fuse_lit": true,
+					"power": 6,
+					"causes_fire": false,
+					"destroy_affected_by_griefing": true
+				}
+			},
+			"minecraft:forced_exploding": {
+				"minecraft:target_nearby_sensor": {},
+				"minecraft:explode": {
+					"fuse_length": 1.5,
+					"fuse_lit": true,
+					"power": 3,
+					"causes_fire": false,
+					"destroy_affected_by_griefing": true
+				},
+				"minecraft:on_target_escape": {}
+			},
+			"minecraft:forced_charged_exploding": {
+				"minecraft:target_nearby_sensor": {},
+				"minecraft:explode": {
+					"fuse_length": 1.5,
+					"fuse_lit": true,
+					"power": 6,
+					"causes_fire": false,
+					"destroy_affected_by_griefing": true
+				},
+				"minecraft:on_target_escape": {}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"enemy",
+					"exploder"
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"on_damage": {
+							"filters": {
+								"test": "is_family",
+								"subject": "damager",
+								"value": "exploder"
+							}
+						},
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:movement": {
+				"max": 0.2
+			},
+			"minecraft:scale": {
+				"value": 1
+			},
+			"minecraft:attack": {
+				"damage": 0
+			},
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:equip_item": {},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 2
+			},
+			"minecraft:behavior.melee_attack": {
+				"priority": 2
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 1
+			},
+			"minecraft:navigation.walk": {
+				"can_walk": true,
+				"avoid_water": true,
+				"avoid_damage_blocks": true
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:jump.static": {},
+			"minecraft:behavior.move_towards_target": {
+				"priority": 3,
+				"within_radius": 999
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 2,
+				"reselect_targets": true,
+				"within_radius": 999,
+				"entity_types": [
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								}
+							]
+						},
+						"max_dist": 999,
+						"must_see": false
+					}
+				]
+			},
+			"minecraft:follow_range": {
+				"value": 999,
+				"max": 999,
+				"min": 999
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:target_nearby_sensor": {
+				"inside_range": 2.5,
+				"outside_range": 6,
+				"must_see": true,
+				"on_inside_range": {
+					"event": "minecraft:start_exploding",
+					"target": "self"
+				},
+				"on_outside_range": {
+					"event": "minecraft:stop_exploding",
+					"target": "self"
+				},
+				"on_vision_lost_inside_range": {
+					"event": "minecraft:stop_exploding",
+					"target": "self"
+				}
+			}
+		},
+		"events": {
+			"minecraft:start_exploding_forced": {
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_component",
+							"operator": "!=",
+							"value": "minecraft:is_charged"
+						},
+						"add": {
+							"component_groups": [
+								"minecraft:forced_exploding"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "has_component",
+							"value": "minecraft:is_charged"
+						},
+						"add": {
+							"component_groups": [
+								"minecraft:forced_charged_exploding"
+							]
+						}
+					}
+				]
+			},
+			"minecraft:start_exploding": {
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_component",
+							"operator": "!=",
+							"value": "minecraft:is_charged"
+						},
+						"add": {
+							"component_groups": [
+								"minecraft:exploding"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "has_component",
+							"value": "minecraft:is_charged"
+						},
+						"add": {
+							"component_groups": [
+								"minecraft:charged_exploding"
+							]
+						}
+					}
+				]
+			},
+			"minecraft:stop_exploding": {
+				"remove": {
+					"component_groups": [
+						"minecraft:exploding"
+					]
+				}
+			},
+			"minecraft:become_charged": {
+				"remove": {
+					"component_groups": [
+						"minecraft:exploding"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"minecraft:charged_frozen_creeper"
+					]
+				}
+			}
+		}
+	}
+}

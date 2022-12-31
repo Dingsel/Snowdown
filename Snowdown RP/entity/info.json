@@ -1,0 +1,30 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dest:info",
+			"materials": {
+				"default": "info"
+			},
+			"textures": {
+				"default": "textures/entity/info_export"
+			},
+			"geometry": {
+				"default": "geometry.info"
+			},
+			"scripts": {
+				"animate": [
+					"move"
+				]
+			},
+			"animations": {
+				"move": "animation.info.move"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#2d2d2d",
+				"overlay_color": "#ffe448"
+			}
+		}
+	}
+}

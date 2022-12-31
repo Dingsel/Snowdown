@@ -1,0 +1,25 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "dest:avalanche",
+			"category": "nature"
+		},
+		"components": {
+			"minecraft:cooldown": {
+				"category": "avalanche",
+				"duration": 0.5
+			},
+			"minecraft:hand_equipped": true,
+			"minecraft:max_stack_size": 1,
+			"minecraft:icon": {
+				"texture": "dest_avalanche"
+			},
+			"minecraft:on_use": {
+                "on_use": { }
+            },
+			"minecraft:can_destroy_in_creative": false
+		},
+		"events": {}
+	}
+}

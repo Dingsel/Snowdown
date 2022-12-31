@@ -1,0 +1,35 @@
+{
+    "format_version": "1.19.40",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "dest:super_charged_snowball_bomb",
+            "is_spawnable": false,
+            "is_summonable": true,
+			"runtime_identifier": "minecraft:snowball"
+        },
+        "components": {
+				"minecraft:type_family": {
+					"family": [ "playerProjectile" ]
+				},
+				"minecraft:collision_box": {
+					"width": 0.25,
+					"height": 0.25
+				},
+				"minecraft:projectile": {
+                    "on_hit": {
+                        "remove_on_hit": {}
+                    },
+					"anchor": 1,
+					"power": 1.5,
+					"gravity": 0.03,
+					"angle_offset": 0,
+					"offset": [ 0, -0.1, 0 ]
+				},
+				"minecraft:physics": {},
+				"minecraft:pushable": {
+					"is_pushable": true,
+					"is_pushable_by_piston": true
+				}
+			}
+    }
+}

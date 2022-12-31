@@ -1,0 +1,23 @@
+{
+    "format_version": "1.19.40",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dest:super_charged_snowball_bomb",
+            "category": "Nature"
+        },
+        "components": {
+            "minecraft:foil": true,
+            "minecraft:icon": {
+                "texture": "dest_super_charged_snowball_bomb"
+            },
+            "minecraft:max_stack_size": 16,
+			"minecraft:throwable": {
+				"do_swing_animation": true,
+				"launch_power_scale": 2
+			},
+			"minecraft:projectile": {
+				"projectile_entity": "dest:super_charged_snowball_bomb"
+			}
+        }
+    }
+}

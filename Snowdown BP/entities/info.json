@@ -1,0 +1,51 @@
+{
+	"format_version": "1.19.50",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "dest:info",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:snowball"
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"despawnable"
+				]
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+            "minecraft:physics": {
+                "has_gravity": false,
+                "has_collision": false
+            },
+			"minecraft:scale": {
+				"value": 0.75
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			}
+		},
+		"component_groups": {
+            "dest:gone": {
+                "minecraft:instant_despawn":{}
+            }
+        },
+		"events": {
+            "dest:despawn": {
+                "add": {
+                    "component_groups": [
+                        "dest:gone"
+                    ]
+                }
+            }
+        }
+	}
+}

@@ -1,0 +1,99 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "dest:skater",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:zombie"
+
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"enemy"
+				]
+			},
+			"minecraft:movement": {
+				"max": 0.3
+			},
+			"minecraft:scale": {
+				"value": 0.8
+			},
+			"minecraft:attack": {
+				"damage": 4
+			},
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:equip_item": {},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.9
+			},
+			"minecraft:behavior.melee_attack": {
+				"priority": 2
+			},
+			"minecraft:behavior.hurt_by_target": { 
+				"priority": 1
+			},
+			"minecraft:navigation.walk": {
+				"can_walk": true,
+				"avoid_water": true,
+				"avoid_damage_blocks": true
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:jump.static": {},
+			"minecraft:behavior.move_towards_target": {
+				"priority": 3,
+				"within_radius": 999
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"on_damage": {
+							"filters": {
+								"test": "is_family",
+								"subject": "damager",
+								"value": "exploder"
+							}
+						},
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 2,
+				"reselect_targets": true,
+				"within_radius": 999,
+				"entity_types": [
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								}
+							]
+						},
+						"max_dist": 999,
+						"must_see": false
+					}
+				]
+			},
+			"minecraft:follow_range": {
+				"value": 999,
+				"max": 999,
+				"min": 999
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			}
+		}
+	}
+}

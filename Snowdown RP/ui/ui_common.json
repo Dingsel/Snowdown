@@ -1,0 +1,23 @@
+{
+    "namespace": "common",
+    "filled_progress_bar": {
+        "type": "image",
+        "texture": "textures/ui/filled_progress_bar",
+        "clip_direction": "center",
+        "color": [0.4117,0.823,1],
+        "bindings": [
+          {
+            "binding_name": "#progress_percentage",
+            "binding_name_override": "#clip_ratio"
+          }
+        ]
+      },
+      
+      "empty_progress_bar": {
+        "type": "image",
+        "texture": "textures/ui/empty_progress_bar",
+        "color": [0.4117,0.823,1]
+      }
+    
+    
+}

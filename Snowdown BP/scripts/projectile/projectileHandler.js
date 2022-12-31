@@ -1,4 +1,5 @@
 import { world, Player, Location, MolangVariableMap, Vector, system } from "@minecraft/server"
+import { core } from "../events/eventHandler";
 import { particles } from "./projectileList"
 
 export function launchProjectile(x0, y0, z0, g, x1, y1, z1) {
@@ -16,6 +17,7 @@ export function launchProjectile(x0, y0, z0, g, x1, y1, z1) {
     const zVelocity = zDistance / time;
 
     // Return the velocity as a Vector3 object
+    console.warn(xVelocity, yVelocity, zVelocity)
     return new Vector(xVelocity, yVelocity, zVelocity);
 }
 
@@ -39,6 +41,12 @@ world.events.projectileHit.subscribe(({ location, projectile }) => {
     projectile.dimension.spawnParticle(particle.particle, location, new MolangVariableMap())
 })
 
+world.events.beforeItemUse.subscribe(({ item, source: player }) => {
+    if (item.typeId != "dest:snow_cannon") return;
+    world.playSound("liquid.lavapop", { pitch: 0.7, location: player.headLocation })
+})
+
+
 world.events.itemUse.subscribe(({ item, source }) => {
     const particle = particles.find(p => p.shooter === item.typeId)
     if (!particle) return
@@ -47,7 +55,16 @@ world.events.itemUse.subscribe(({ item, source }) => {
 
 
 //world.events.tick.subscribe(() => {
-//    const entity = world.getDimension("overworld").spawnEntity("dest:big_snowball_projectile", new Location(1, 5, 1))
+//    const entity = world.getDimension("overworld").spawnEntity("dest:big_snowball_projectile", new Location(-1, 20, -1))
 //    const { x, y, z } = entity.location
-//    entity.setVelocity(launchProjectile(x, y, z, 0.08, system.currentTick % 32 - 16, 10, (system.currentTick + 16) % 32 - 16))
+//    entity.setVelocity(launchProjectile(x, y, z, 0.03, 4, 28, 27))
+//})
+
+//animating the tile
+
+//core.onTileExpand((tile) => {
+//    const animTime = 600
+//    const coordsX = tile.x * 16
+//    const coordsZ = tile.z * 16
+//    anim(animTime, coordsX, coordsZ)
 //})

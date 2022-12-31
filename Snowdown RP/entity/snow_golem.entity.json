@@ -1,0 +1,31 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dest:snow_golem",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/snow_golem"
+			},
+			"geometry": {
+				"default": "geometry.snow_golem"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#ffffff"
+			},
+			"scripts": {
+				"animate": [
+					"move"
+				]
+			},
+			"animations": {
+				"jump": "animation.snow_golem.jump",
+				"move": "controller.animation.snow_golem.move"
+			}
+		}
+	}
+}

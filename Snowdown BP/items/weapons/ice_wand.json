@@ -1,0 +1,25 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "dest:ice_wand",
+			"category": "nature"
+		},
+		"components": {
+			"minecraft:hand_equipped": true,
+			"minecraft:max_stack_size": 1,
+			"minecraft:icon": {
+				"texture": "dest_ice_wand"
+			},
+			"minecraft:cooldown": {
+				"duration": 0.25,
+				"category": "ice"
+			},
+			"minecraft:on_use": {
+                "on_use": { }
+            },
+			"minecraft:can_destroy_in_creative": false
+		},
+		"events": {}
+	}
+}

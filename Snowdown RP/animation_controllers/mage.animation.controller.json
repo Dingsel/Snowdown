@@ -1,0 +1,45 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.mage": {
+            "states": {
+                "default": {
+                    "blend_transition": 0.3,
+                    "animations": [
+                        "idle"
+                    ],
+                    "transitions": [
+                        {
+                            "damage": "query.mark_variant == 1"
+                        },
+                        {
+                            "heal": "query.mark_variant == 2"
+                        }
+                    ]
+                },
+                "damage": {
+                    "blend_transition": 0.3,
+                    "animations": [
+                        "damage"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.all_animations_finished"
+                        }
+                    ]
+                },
+                "heal": {
+                    "blend_transition": 0.3,
+                    "animations": [
+                        "heal"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.all_animations_finished"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

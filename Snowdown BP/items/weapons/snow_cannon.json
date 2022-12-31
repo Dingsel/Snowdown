@@ -5,6 +5,12 @@
             "identifier": "dest:snow_cannon"
         },
         "components": {
+            "minecraft:on_use": {
+                "on_use": { }
+            },
+            "minecraft:icon": {
+                "texture": "cannon"
+            }
         }
     }
 }

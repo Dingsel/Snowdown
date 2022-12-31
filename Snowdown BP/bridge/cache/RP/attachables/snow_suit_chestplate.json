@@ -1,0 +1,31 @@
+{
+	"file_path": "C:\\Users\\Luka\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_resource_packs\\Snowdown RP\\attachables\\snow_suit_chestplate.json",
+	"file_type": "attachable",
+	"format_version": 0,
+	"cache_content": {
+		"format_version": "1.8.0",
+		"minecraft:attachable": {
+			"description": {
+				"identifier": "dest:snow_suit_chestplate",
+				"materials": {
+					"default": "armor",
+					"enchanted": "armor_enchanted"
+				},
+				"textures": {
+					"default": "textures/models/armor/snow_suit_1",
+					"enchanted": "textures/misc/enchanted_item_glint"
+				},
+				"geometry": {
+					"default": "geometry.humanoid.armor.chestplate"
+				},
+				"scripts": {
+					"parent_setup": "variable.chestplate_layer_visible = 0.0;"
+				},
+				"render_controllers": [
+					"controller.render.armor"
+				]
+			}
+		}
+	},
+	"file_uuid": "41560e2d_e65b_4094_991a_703bb3fddc64"
+}

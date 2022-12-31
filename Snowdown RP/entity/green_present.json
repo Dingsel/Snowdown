@@ -1,0 +1,27 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dest:green_present",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/green_present"
+			},
+			"geometry": {
+				"default": "geometry.present"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"base_color": "#ff5656",
+				"overlay_color": "#f0ff51"
+			},
+			"particle_effects": {
+				"snowflake": "dest:present"
+			}
+		}
+	}
+}

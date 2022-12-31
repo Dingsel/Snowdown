@@ -9,8 +9,20 @@
 			"runtime_identifier": "minecraft:end_crystal"
 		},
 		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"despawnable"
+				]
+			},
+			"minecraft:physics": {
+				"has_collision": true,
+				"has_gravity": true
+			},
 			"minecraft:scale": {
 				"value": 1.65
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
 			},
 			"minecraft:damage_sensor": {
 				"triggers": [

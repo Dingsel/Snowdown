@@ -41,7 +41,7 @@
         "animate": [
           "root",
           {
-            "arms_cannon" : "query.is_item_name_any('slot.weapon.mainhand', 0, 'dest:snow_cannon')"
+            "arms_cannon" : "(!variable.is_first_person && !variable.map_face_icon) ? query.is_item_name_any('slot.weapon.mainhand', 0, 'dest:snow_cannon') : 0.0"
           }
         ]
       },
@@ -106,7 +106,10 @@
         { "controller.render.player.map": "variable.map_face_icon" },
         { "controller.render.snow_cannon": "true" }
       ],
-      "enable_attachables": true
+      "enable_attachables": true,
+      "particle_effects": {
+				"kb": "dest:snow_kb"
+			}
     }
   }
 }

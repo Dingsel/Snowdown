@@ -1,0 +1,126 @@
+{
+	"format_version": "1.19.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "dest:green_present",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"dest:gone": {
+				"minecraft:instant_despawn": {}
+			},
+			"dest:waiting": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"deals_damage": false
+						}
+					]
+				},
+				"minecraft:timer": {
+					"time": 5,
+					"looping": false,
+					"time_down_event": {
+						"event": "dest:despawn",
+						"target": "self"
+					}
+				}
+			},
+			"dest:can_interact": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"deals_damage": false,
+							"on_damage": {
+								"event": "dest:wait"
+							}
+						},
+						{
+							"cause": "all",
+							"deals_damage": false,
+							"on_damage": {
+								"event": "dest:opened",
+								"target": "other"
+							}
+						}
+					]
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"event": "dest:wait"
+							}
+						},
+						{
+							"on_interact": {
+								"event": "dest:opened"
+							}
+						}
+					]
+				}
+			}
+		},
+		"events": {
+			"dest:opened": {},
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"dest:can_interact"
+					]
+				}
+			},
+			"dest:despawn": {
+				"add": {
+					"component_groups": [
+						"dest:gone"
+					]
+				}
+			},
+			"dest:wait": {
+				"run_command": {
+					"command": "playanimation @s animation.present.open"
+				},
+				"remove": {
+					"component_groups": [
+						"dest:can_interact"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"dest:waiting"
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"despawnable"
+				]
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:scale": {
+				"value": 1.25
+			},
+			"minecraft:collision_box": {
+				"width": 0.4,
+				"height": 0.4
+			},
+			"minecraft:physics": {
+				"has_collision": true,
+				"has_gravity": false
+			},
+			"minecraft:nameable": {
+				"always_show": true,
+				"allow_name_tag_renaming": false
+			}
+		}
+	}
+}

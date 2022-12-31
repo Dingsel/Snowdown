@@ -8,6 +8,14 @@
 			"is_experimental": false
 		},
 		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"despawnable"
+				]
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
 			"minecraft:physics": {
 				"has_gravity": true,
 				"has_collision": true

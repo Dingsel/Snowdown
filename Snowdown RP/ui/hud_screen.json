@@ -1,4 +1,27 @@
 {
+  "boss_name_panel": {
+    "$update_string": "update",
+    "type": "panel",
+    "size": [ "100%", "100%c" ],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "controls": [
+      {
+        "boss_name": {
+          "offset" : [0, -2.5],
+          "font_type": "MinecraftTen",
+          "type": "label",
+          "color": "$boss_name_text_color",
+          "text": "House Integrity",
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "shadow": false
+        }
+      }
+    ]
+  },
+
+
   "hud_actionbar_text": {
     "$actionbar|default": "$actionbar_text",
     "visible": "(($actionbar - 'sf.') = $actionbar))"
@@ -27,12 +50,11 @@
           "$mytext": "($actionbar - 'sf.')",
           "text": "$mytext",
           "shadow": false,
-"text_alignment": "center"
+          "text_alignment": "center"
         }
       }
     ]
   },
-
   "snowflake_show_factory": {
     "type": "panel",
     "factory": {
@@ -42,6 +64,569 @@
       }
     }
   },
+
+  "hud_title_text": {
+    "type": "stack_panel",
+    "orientation": "vertical",
+    "offset": [0, -19],
+    "layer": 1,
+    "alpha": "@hud.anim_actionbar_text_alpha_out",
+    "propagate_alpha": true,
+    "controls": [{
+        "title_frame": {
+          "ignored": "((not (($title_text - 'test.' - 'lost.' - 'tb.') = $title_text)) or ($title_text = 'credits'))",
+            "type": "panel",
+            "size": ["100%", "100%cm"],
+            "controls": [{
+                "title_background": {
+                    "type": "image",
+                    "size": ["100%sm + 30px", "100%sm + 6px"],
+                    "texture": "textures/ui/hud_tip_text_background",
+                    "alpha": "@hud.anim_title_background_alpha_in"
+                }
+            }, {
+                "title": {
+                    "type": "label",
+                    "anchor_from": "top_middle",
+                    "anchor_to": "top_middle",
+                    "color": "$title_command_text_color",
+                    "text": "#text",
+                    "layer": 31,
+                    "localize": false,
+                    "font_size": "extra_large",
+                    "variables": [{
+                        "requires": "(not $title_shadow)",
+                        "$show_shadow": false
+                    }, {
+                        "requires": "$title_shadow",
+                        "$show_shadow": true
+                    }],
+                    "shadow": "$show_shadow",
+                    "text_alignment": "center",
+                    "offset": [0, 6],
+                    "bindings": [{
+                        "binding_name": "#hud_title_text_string",
+                        "binding_name_override": "#text",
+                        "binding_type": "global"
+                    }]
+                }
+            }]
+        }
+    }, {
+         "subtitle_frame": {
+            "type": "panel",
+            "size": ["100%", "100%cm"],
+            "controls": [{
+                "subtitle_background": {
+                    "type": "image",
+                    "size": ["100%sm + 20px", "100%sm + 5px"],
+                    "offset": [0, 16],
+                    "texture": "textures/ui/hud_tip_text_background",
+                    "variables": [{
+                        "requires": "$subtitle_initially_visible",
+                        "$subtitle_bg": "@hud.anim_title_background_alpha_in"
+                    }, {
+                        "requires": "(not $subtitle_initially_visible)",
+                        "$subtitle_bg": "@hud.anim_subtitle_background_alpha_in"
+                    }],
+                    "alpha": "$subtitle_bg"
+                }
+            }, {
+                "subtitle": {
+                    "type": "label",
+                    "anchor_from": "top_middle",
+                    "anchor_to": "top_middle",
+                    "color": "$title_command_text_color",
+                    "text": "#text",
+                    "font_type": "MinecraftTen",
+                    "layer": 31,
+                    "localize": false,
+                    "font_size": "extra_large",
+                    "variables": [{
+                        "requires": "$subtitle_initially_visible",
+                        "$anim_type": 1.0
+                    }, {
+                        "requires": "(not $subtitle_initially_visible)",
+                        "$anim_type": "@hud.anim_subtitle_text_alpha_in"
+                    }, {
+                        "requires": "(not $title_shadow)",
+                        "$show_shadow": false
+                    }, {
+                        "requires": "$title_shadow",
+                        "$show_shadow": true
+                    }],
+                    "shadow": "$show_shadow",
+                    "alpha": "$anim_type",
+                    "text_alignment": "center",
+                    "offset": [1, 19],
+                    "bindings": [{
+                        "binding_name": "#hud_subtitle_text_string",
+                        "binding_name_override": "#text",
+                        "binding_type": "global"
+                    }]
+                }
+            }]
+        }
+    }]
+},
+
+"credits_show": {
+  "type": "image",
+  "visible": "($title_text = 'credits')",
+  "size": ["300%", "100%"],
+    "texture": "textures/ui/Black",
+    "offset": [0, 0],
+  "anchor_from": "center",
+  "layer": 100,
+  "anims": ["credits_black_alpha_anim"],
+  "anchor_to": "center",
+  "controls": [
+    {
+      "credits_thanks": {
+        "type": "label",
+        "layer": 1,
+        "enable_profanity_filter": false,
+        "offset": [0, 0],
+        "font_scale_factor": 3,
+        "font_type": "MinecraftTen",
+        "$mytext": "Thanks for Playing!",
+        "color": [0.301,1,0.9],
+        "text": "$mytext",
+        "shadow": false,
+        "text_alignment": "center",
+        "anims": ["wait_alpha_credits_anim"],
+        "anchor_from": "center",
+        "anchor_to": "center",
+        "alpha": 0
+      }
+    },
+    {
+      "credits_rest": {
+        "type": "label",
+        "layer": 1,
+        "enable_profanity_filter": false,
+        "offset": [0, "140%"],
+        "font_scale_factor": 2,
+        "anims": ["wait_linear_credits_anim"],
+        "color": [0.2,0.62,0.72],
+        "text_alignment": "center",
+        "$mytext": "Dedecated to the bridge Jam!!\n\n\n\n- Creators -\nDingsel\nSchwertKlee4517\nTheEnemiez\nXictul\nTheBoss9345\nDeathSinger4221\n\n\n\n\n\n\n- UI -\nSchwertKlee4517\nDingsel\n\n- Particles -\nTheEnemiez\nSchwertKlee4517\n\n- Scripts -\nDingsel\nSchwertKlee4517\n\n- Textures -\nSchwertKlee4517\nDingsel\nDeathSinger4221\n\n- Models -\nDingsel\nSchwertKlee4517\n\n- Map -\nDingsel\nTheBoss9345\nDeathSinger4221\nXictul\n\n\nAnd Of course...\n\nSpecial Thanks to:\nYOU!\n\n\n\n\n\n\n\n\n\n\n\n\n",
+        "text": "$mytext",
+        "shadow": false,
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle"
+      }
+    }
+  ]
+},
+
+"credits_black_alpha_anim": {
+  "anim_type": "alpha",
+  "easing": "linear",
+  "duration": 3,
+  "from": 0,
+  "to": 1,
+  "next": "credits_black_wait_anim"
+},
+
+"wait_linear_credits_anim": {
+  "anim_type": "wait",
+  "duration": 4,
+  "next": "linear_credits_anim"
+},
+
+"credits_black_wait_anim": {
+  "anim_type": "wait",
+  "duration":60,
+  "next": "credits_black_alpha_out"
+},
+
+"credits_black_alpha_out": {
+  "anim_type": "alpha",
+  "easing": "linear",
+  "duration": 4,
+  "from": 1,
+  "to": 0
+},
+
+"linear_credits_anim": {
+  "anim_type": "offset",
+  "easing": "linear",
+  "duration": 55,
+  "from": [0, "120%"],
+  "to": [0,"-400%"],
+  "next": "credits_black_alpha_out"
+},
+
+"wait_alpha_credits_anim": {
+  "anim_type": "wait",
+  "duration": 4,
+  "next": "alpha_in_credits_anim"
+},
+
+"alpha_in_credits_anim": {
+  "anim_type": "alpha",
+  "easing": "linear",
+  "duration": 5,
+  "from": 1,
+  "to": 0
+},
+
+"noti_show": {
+  "type": "image",
+  "visible": "(not(($title_text - 'test.') = $title_text)",
+  "size": [  "100%c +15px", "100%c +13px" ],
+    "texture": "textures/ui/background_noti",
+    "offset": [0, 0],
+  "anchor_from": "top_right",
+  "anchor_to": "top_right",
+  "anims": ["noti_pop_in_animation"],
+  "controls": [
+    {
+      "noti_show_text": {
+        "type": "label",
+        "layer": 31,
+        "enable_profanity_filter": false,
+        "offset": [8, 8],
+        "line_padding": 0.5,
+        "$mytext": "($title_text - 'test.')",
+        "text": "$mytext",
+        "font_scale_factor": 1.3,
+        "shadow": false,
+        "anchor_from": "top_left",
+        "anchor_to": "top_left"
+      }
+    }
+  ]
+},
+
+"lost_show": {
+  "type": "image",
+  "visible": "(not(($title_text - 'lost.') = $title_text)",
+  "size": ["300%", "100%"],
+    "texture": "textures/ui/Black",
+    "offset": [0, 0],
+  "anchor_from": "center",
+  "anchor_to": "center",
+  "layer": 100,
+  "anims": ["lost_pop_in_animation"],
+  "controls": [
+    {
+      "lost_gameover": {
+        "type": "image",
+        "layer": 1,
+        "alpha" : 1,
+        "size": ["60%", "30%"],
+        "texture": "textures/ui/gameover",
+        "anchor_from": "center",
+        "anchor_to": "center",
+        "anims": ["gameover_in_animation"]
+      }
+    },
+    {
+      "lost_wave": {
+        "type": "label",
+        "layer": 1,
+        "offset": [0, "5%"],
+        "enable_profanity_filter": false,
+        "color": [0.501,0.501,0.501],
+        "text": "You made it to Wave",
+        "font_type":"MinecraftTen",
+        "font_scale_factor": 2.5,
+        "shadow": true,
+        "anchor_from": "center",
+        "anchor_to": "center",
+        "alpha": 0,
+        "anims": ["wavelabel_wait_short_animation"]
+      }
+    },
+    {
+      "lost_wave_count": {
+        "type": "label",
+        "layer": 1,
+        "offset": [0, "25%"],
+        "enable_profanity_filter": false,
+        "text": "($title_text - 'lost.')",
+        "color": [0.811,0.49,0.49],
+        "font_scale_factor": 6.6,
+        "shadow": false,
+        "anchor_from": "center",
+        "anchor_to": "center",
+        "alpha": 0,
+        "anims": ["wavelabel_wait_long_animation"]
+      }
+    }
+  ]
+},
+"textbox_show": {
+  "type": "image",
+  "visible": "(not(($title_text - 'tb.') = $title_text)",
+  "$actionbar|default": "$actionbar_text",
+  "$fontsize|default": 1.3,
+  "size": [  32, 32 ],
+  "texture":"textures/ui/hud_tip_text_background",
+  "offset": ["-50%c +50%x", "-20%"],
+  "layer": 50,
+  "anchor_from": "bottom_middle",
+  "anchor_to": "bottom_middle",
+  "$alphafadein|default": 0.5,
+  "$alphafadeout|default": 0.5,
+  "anims": [ "anim_tbbg_alpha" ],
+  "variables": [
+    {
+      "requires": "(not(($title_text - '§i') = $title_text))",
+      "$alphafadein": 0,
+      "$alphafadeout": 0.5
+    }
+  ],
+  "controls": [
+    {
+      "textbox_show_text": {
+        "type": "image",
+
+        "size": [  "350%","100%" ],
+        "texture":"textures/ui/hud_tip_text_background",
+        "offset": ["100%+1px", 0],
+        "layer": 50,
+        "anchor_from": "left_middle",
+        "anchor_to": "left_middle",
+        "anims": [ "anim_tbbg_alpha" ],
+        "controls": [
+          {
+            "textbox_show_text_text": {
+              "type": "label",
+              "anims": [ "anim_tbot_alpha" ],
+              "layer": 1,
+              "enable_profanity_filter": false,
+              "color": [0.65, 1, 1],
+              "offset": ["2%",0],
+              "line_padding": 1,
+              "text": "($title_text - 'tb.')",
+              "shadow": false,
+              "contained": true,
+              "size": ["100%","100%"],
+              "anchor_from": "top_left",
+              "anchor_to": "top_left"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "image": {
+        "type": "image",
+
+        "size": [  "100%","100%" ],
+        "texture":"textures/ui/snowman",
+        "anims": [ "anim_tbot_alpha" ],
+        "layer": 1,
+        "anchor_from": "center",
+        "anchor_to": "center"
+      }
+    }
+  ]
+},
+"anim_tbot_alpha": {
+  "anim_type": "alpha",
+  "easing": "linear",
+  "duration": 2,
+  "from": "($alphafadein*2)",
+  "to": "($alphafadeout*2)",
+  "next": "anim_wait_tbot_alpha"
+},
+"anim_tbbg_alpha": {
+  "anim_type": "alpha",
+  "easing": "linear",
+  "duration": 2,
+  "from": "$alphafadein",
+  "to": "$alphafadeout",
+  "next": "anim_wait_tbbg_alpha"
+},
+
+"anim_wait_tbbg_alpha": {
+  "anim_type": "wait",
+  "duration": 2,
+  "next": "anim_tb_smalldepear"
+},
+
+"anim_wait_tbot_alpha": {
+  "anim_type": "wait",
+  "duration": 2,
+  "next": "anim_tb_bigdepear"
+},
+
+"anim_tb_bigdepear": {
+  "anim_type": "alpha",
+  "easing": "linear",
+  "duration": 2,
+  "from": 1,
+  "to": 0
+},
+
+"anim_tb_smalldepear": {
+  "anim_type": "alpha",
+  "easing": "linear",
+  "duration": 2,
+  "from": 0.5,
+  "to": 0
+},
+
+"wavelabel_wait_short_animation": {
+  "anim_type": "wait",
+  "duration": 2,
+  "next": "wave_label_in_animation"
+},
+
+"wavelabel_wait_long_animation": {
+  "anim_type": "wait",
+  "duration": 3,
+  "next": "wave_label_in_animation"
+},
+
+
+"wave_label_in_animation": {
+  "anim_type": "alpha",
+  "easing": "smooth",
+  "duration": 0.6,
+  "from": 0,
+  "to": 1,
+  "next": "wave_wait_out_animation"
+},
+
+"wave_wait_out_animation": {
+  "anim_type": "wait",
+  "duration": 2,
+  "next": "wave_label_out_animation"
+},
+
+"wave_label_out_animation": {
+  "anim_type": "alpha",
+  "easing": "smooth",
+  "duration": 0.6,
+  "from": 1,
+  "to": 0
+},
+
+
+"gameover_in_animation": {
+  "anim_type": "offset",
+  "easing": "out_bounce",
+  "duration": 1.6,
+  "from": [0, "-80%"],
+  "to": [0, "-14%"],
+  "next": "gameover_wait_animation"
+},
+
+"gameover_wait_animation": {
+  "anim_type": "wait",
+  "duration": 4.5,
+  "next": "gameover_out_animation"
+},
+
+"gameover_out_animation": {
+  "anim_type": "offset",
+  "easing": "in_back",
+  "duration": 1.5,
+  "from": [0, "-14%"],
+  "to": [0, "60%"],
+  "next": "disappear_animation"
+},
+
+
+"lost_pop_in_animation": {
+  "anim_type": "alpha",
+  "easing": "smooth",
+  "duration": 0.7,
+  "from": 0,
+  "to": 0.5,
+  "next": "lost_wait_animation"
+},
+
+"lost_wait_animation": {
+  "anim_type": "wait",
+  "duration": 6,
+  "next": "lost_pop_out_animation"
+},
+
+"lost_pop_out_animation": {
+  "anim_type": "alpha",
+  "easing": "smooth",
+  "duration": 1,
+  "from": 0.5,
+  "to": 0,
+  "next": "disappear_animation"
+},
+
+"noti_pop_in_animation": {
+  "anim_type": "offset",
+  "easing": "out_quad",
+  "duration": 3,
+  "from": ["100%", 50],
+  "to": [0,50],
+  "next": "noti_wait_animation"
+},
+
+"noti_wait_animation": {
+  "anim_type": "wait",
+  "duration": 6,
+  "next": "noti_pop_out_animation"
+},
+
+"noti_pop_out_animation": {
+  "anim_type": "offset",
+  "easing": "in_quad",
+  "duration": 3,
+  "from": [0, 50],
+  "to": ["100%",50],
+  "next": "disappear_animation"
+},
+
+"disappear_animation": {
+  "anim_type": "alpha",
+  "duration": 1,
+  "from":0,
+  "to": 0
+},
+
+"lost_show_factory": {
+  "type": "panel",
+  "factory": {
+    "name": "hud_title_text_factory",
+    "control_ids": {
+      "hud_title_text": "lost_show@hud.lost_show"
+    }
+  }
+},
+
+"noti_show_factory": {
+  "type": "panel",
+  "factory": {
+    "name": "hud_title_text_factory",
+    "control_ids": {
+      "hud_title_text": "noti_show@hud.noti_show"
+    }
+  }
+},
+
+"credits_show_factory": {
+  "type": "panel",
+  "factory": {
+    "name": "hud_title_text_factory",
+    "control_ids": {
+      "hud_title_text": "credits_show@hud.credits_show"
+    }
+  }
+},
+
+"textbox_show_factory": {
+  "type": "panel",
+  "factory": {
+    "name": "hud_title_text_factory",
+    "control_ids": {
+      "hud_title_text": "textbox_show@hud.textbox_show"
+    }
+  }
+},
 
   "hud_content": {
     "type": "panel",
@@ -54,6 +639,10 @@
     "size": "$hud_size",
     "controls": [
       { "root_panel@hud.root_panel": {} },
+      { "lost_show_factory@hud.lost_show_factory": {} },
+      { "textbox_show_factory@hud.textbox_show_factory": {} },
+      { "noti_show_factory@hud.noti_show_factory": {} },
+      { "credits_show_factory@hud.credits_show_factory": {} },
       { "snowflake_show_factory@hud.snowflake_show_factory": {} },
       { "camera_renderer@camera_renderer": {} }
     ]

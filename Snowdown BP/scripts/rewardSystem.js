@@ -1,12 +1,27 @@
-import { world, system, Location, MolangVariableMap, Player } from "@minecraft/server"
+import { world, MolangVariableMap, Player } from "@minecraft/server"
+import { randomizePitch } from "./functions";
 
-const randomizePitch = (min, max) => {
-    return Number((Math.random() * (max - min) + min).toFixed(1))
-}
-
-const lootTable = {
-    "minecraft:creeper": {
+export const lootTable = {
+    "dest:skater": {
+        reward: 20
+    },
+    "dest:frozen": {
         reward: 10
+    },
+    "dest:snow_golem": {
+        reward: 100
+    },
+    "dest:frozen_creeper": {
+        reward: 55
+    },
+    "dest:frozen_skeleton": {
+        reward: 25
+    },
+    "dest:mage": {
+        reward: 50
+    },
+    "dest:grinch": {
+        reward: 250
     }
 }
 
@@ -19,6 +34,5 @@ world.events.entityHurt.subscribe(({ damagingEntity: player, hurtEntity }) => {
     if (health.current > 0) return
     player.setDynamicProperty("Coins", player.getCoins() + findLoot.reward)
     player.playSound("random.orb", { pitch: randomizePitch(1.8, 2.2) })
-    // thx
-    player.dimension.spawnParticle("sd:snowflakes", hurtEntity.headLocation, new MolangVariableMap())
+    player.dimension.spawnParticle("sw:snowflakes", hurtEntity.headLocation, new MolangVariableMap())
 })

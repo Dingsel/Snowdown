@@ -3,9 +3,49 @@
 	"texture_name": "atlas.items",
 	"texture_data": {
 		"dest_big_snowball": {
-			"textures": [
-				"textures/items/big_snowball"
-			]
+			"textures": "textures/items/big_snowball"
+		},
+		"dest_super_charged_snowball_bomb": {
+			"textures": "textures/items/super_charged_snowball_bomb"
+		},
+		"dest_explosive_snowball": {
+			"textures": "textures/items/explosive_snowball"
+		},
+		"dest_candy_cane": {
+			"textures": "textures/items/candy_cone"
+		},
+		"dest_green_candy_cane": {
+			"textures": "textures/items/green_candy_cane"
+		},
+		"dest_icicle": {
+			"textures": "textures/items/icicle"
+		},
+		"dest_ice_shard_sword": {
+			"textures": "textures/items/ice_shard_sword"
+		},
+		"dest_hot_chocolate": {
+			"textures": "textures/items/hot_chocolate"
+		},
+		"dest_ice_wand": {
+			"textures": "textures/items/ice_wand"
+		},
+		"dest_avalanche": {
+			"textures": "textures/items/avalanche"
+		},
+		"dest_snow_suit_helmet": {
+			"textures": "textures/items/snow_suit_helmet"
+		},
+		"dest_snow_suit_chestplate": {
+			"textures": "textures/items/snow_suit_chestplate"
+		},
+		"dest_snow_suit_leggings": {
+			"textures": "textures/items/snow_suit_leggings"
+		},
+		"dest_snow_suit_boots": {
+			"textures": "textures/items/snow_suit_boots"
+		},
+		"cannon": {
+			"textures": "textures/items/snow_cannon"
 		}
 	}
 }
