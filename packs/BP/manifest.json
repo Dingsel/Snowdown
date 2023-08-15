@@ -1,0 +1,41 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "pack.name",
+		"description": "pack.description",
+		"uuid": "1d948e70-8ef1-40a1-9a8f-9c11ffe6e443",
+		"version": [ 1, 0, 0 ],
+		"min_engine_version": [ 1, 19, 50 ]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "c13c20fe-f912-47d8-a8ad-60d084484e55",
+			"version": [ 1, 0, 0 ]
+		},
+		{
+			"type": "script",
+			"language": "javascript",
+			"uuid": "0586c57e-6231-4d17-82d1-a9b22c12328e",
+			"entry": "scripts/main.js",
+			"version": [ 1, 0, 0 ]
+		}
+	],
+	"dependencies": [
+		{
+			"version": [ 1, 5, 36 ],
+			"uuid": "029cd235-56e6-4696-a748-226bec79fd11"
+		},
+		{
+			"module_name": "@minecraft/server",
+			"version": "1.4.0-beta"
+		},
+		{
+			"module_name": "@minecraft/server-ui",
+			"version": "1.2.0-beta"
+		}
+	],
+	"metadata": {
+		"authors": [ "Dingsel" ]
+	}
+}
